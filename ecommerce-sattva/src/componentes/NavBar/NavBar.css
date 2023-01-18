@@ -4,7 +4,7 @@
     font-size: 22px;
 }
 
-.nav{
+.navbar-container{
     background-color: rgb(220, 216, 216);
     color: rgba(0, 0, 0, 0.968);
     display: flex;
@@ -14,7 +14,7 @@
     padding: 1rem 1rem;
 }
 
-.nav ul {
+.navbar-container ul {
     padding: 0;
     margin: 0;
     list-style: none;
@@ -22,11 +22,11 @@
     gap: 1rem;
 }
 
-.nav a {
+.navbar-container a {
     color: inherit;
     text-decoration: none;
 }
 
-.nav li:hover{
+.navbar-container li:hover{
     background-color: rgb(176, 228, 165);
 }

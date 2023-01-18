@@ -1,8 +1,9 @@
-import imgLogo from "../material-grafico/logo-fondotransparente.png"
-import CartWidget from "./CartWidget";
+import imgLogo from "../../material-grafico/logo-fondotransparente.png"
+import { CartWidget } from "../CartWidget/CartWidget"
+import './NavBar.css'
 
-export default function Navbar(){
-    return <nav className="nav">
+export default function NavBar(){
+    return <nav className="navbar-container">
         
             <ul>
             <img className="sattvaLogo" src={imgLogo}  alt={imgLogo} width="80" height="28"/>
@@ -20,4 +21,5 @@ export default function Navbar(){
             </li>
         </ul>
     </nav>
+    
 }

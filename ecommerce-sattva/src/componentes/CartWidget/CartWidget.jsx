@@ -5,5 +5,3 @@ export const CartWidget = () => {
         <a>🛒<span>1</span></a>
      );
 }
-
-export default CartWidget;
