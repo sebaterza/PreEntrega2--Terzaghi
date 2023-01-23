@@ -1,6 +1,7 @@
 import './ItemListContainer.css'
 import ItemCount from "../../componentes/ItemCount/ItemCount";
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import ItemList from '../../componentes/ItemList/ItemList';
 import img1 from '../../material-grafico/aceites.jpg'
 import img2 from '../../material-grafico/especias.jpg'
@@ -100,6 +101,7 @@ const arreglo =[
 const ItemListContainer = (props) => {
 
     const [products, setProducts] = useState([]);
+    const parametro = useParams();
 
     const getProducts = new Promise ((resolve,reject) => {
         setTimeout(() => {
@@ -114,6 +116,8 @@ const ItemListContainer = (props) => {
         })
         .catch(error => console.log(error))
     }, [])
+
+
 
     return (
     <div>

@@ -2,17 +2,15 @@ import Item from "../Item/Item"
 import {Link} from 'react-router-dom'
 
 
-function ItemList({productos}) {
+export function ItemList({productos}) {
   return(
 
     <>
-      { productos.map( prod=> (
+      { productos.map( (prod)=> (
         <Link key={prod.id} to={`item/${prod.id}`}>
 
-          <Item 
-            prod={prod}
-            
-            />
+          <Item prod={prod} Item/>
+          
         </Link>
 
       ))}
@@ -20,6 +18,7 @@ function ItemList({productos}) {
     </>
   )
 }
+
 
 
 {/*const ItemList = ({productos}) => {
