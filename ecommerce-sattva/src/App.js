@@ -20,7 +20,7 @@ function App() {
         <Route path='*' element={<PageNotFound />} />
         <Route path= '/' element= {<ItemListContainer greeting="Bienvenido a la tienda de Sattva"/>} /> 
         <Route path="/categoria/:ItemConsole" element={<ItemListContainer />}/>
-        <Route path='/item/:id' element={<ItemDetailContainer />}  />
+        <Route path="/item/:id" element={<ItemDetailContainer />}  />
       </Routes>  
 
     </BrowserRouter>
