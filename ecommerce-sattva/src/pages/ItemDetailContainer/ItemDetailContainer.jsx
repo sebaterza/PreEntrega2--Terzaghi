@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { getProducts } from "../../Mock/Productos";
-import { ItemDetail } from "../../componentes/ItemDetail/ItemDetail"
+import ItemDetail from "../../componentes/ItemDetail/ItemDetail"
 import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
@@ -14,7 +14,7 @@ const ItemDetailContainer = () => {
 
   return (
     <div>
-      <ItemDetail detalleProducto = {setDetalleProducto} />  
+      <ItemDetail detalleProducto = {detalleProducto} />  
     </div>
   )
 }

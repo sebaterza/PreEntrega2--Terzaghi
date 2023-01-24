@@ -5,6 +5,7 @@ import ItemList from '../../componentes/ItemList/ItemList';
 import { getProducts } from '../../Mock/Productos';
 
 
+
 const ItemListContainer = ({props}) => {
 
     const [listaProductos, setListaProductos] = useState([]);
@@ -20,8 +21,7 @@ const ItemListContainer = ({props}) => {
               setListaProductos(res);
             }
           })
-          .catch((error) => console.log(error))
-          .finally(() => setLoading(false));
+          .catch((error) => console.log(error));
       }, [id]);
 
 
