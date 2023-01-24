@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemList from '../../componentes/ItemList/ItemList';
 import { getProducts } from '../../Mock/Productos';
-
+import { getProductsByCategory } from '../../Mock/Productos';
 
 
 const ItemListContainer = ({greeting}) => {
