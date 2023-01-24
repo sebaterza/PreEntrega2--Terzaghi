@@ -101,8 +101,8 @@ const arreglo =[
         descripcion:"El tarot holístico es una lectura para sanar basada en el autoconocimiento. Un acompañamiento para reinterpretar la situación que te preocupa y avanzar en tus procesos de forma más fluida.",
         img: img10,
         stock: 10,
-    }
-]
+    },
+];
 
 export const getProducts = () => {
     let error = false;

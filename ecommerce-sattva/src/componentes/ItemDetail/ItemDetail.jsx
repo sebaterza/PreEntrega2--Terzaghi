@@ -8,7 +8,13 @@ const ItemDetail = ({detalleProducto}) => {
   };
   return (
 
-    <div>
+    <div style={{
+      display: 'flex',
+      justifyContent: 'center',
+      flexDirection: 'column',
+      alignItems: 'center',
+      padding: '3rem',
+    }}>
         <h2>Detalle de: {titulo}</h2>
         <img src={img} alt={titulo} width="200"/>
         <p>{descripcion}</p>

@@ -14,23 +14,26 @@ const ItemCount = ({stock, initial, onAdd}) => {
             setCount(count + 1);
         }
     };
-  return (
-    <div className="counter">
-        <div className="controllers">
-            <button onClick={restar}>-</button>
-        <div>
-            <span>{count}</span>
-        </div>
-            <button onClick={sumar}>+</button>
-        </div>
-        <button         
-        disabled={count === 0 || stock === 0}
-        onClick={() => onAdd(count)}
-        >
-        Comprar
-        </button>
-    </div>
-  )
-}
+    return (
+        <>
+          <div>
+            <button className="btn btn-dark" onClick={restar}>
+              -
+            </button>
+            <span className="btn ">{count}</span>
+            <button className="btn btn-dark" onClick={sumar}>
+              +
+            </button>
+          </div>
+          <button
+            className="btn btn-dark"
+            disabled={count === 0 || stock === 0}
+            onClick={() => onAdd(count)}
+          >
+            Comprar
+          </button>
+        </>
+      );
+    };
 
 export default ItemCount;

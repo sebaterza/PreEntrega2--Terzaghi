@@ -1,4 +1,3 @@
-import './ItemListContainer.css'
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemList from '../../componentes/ItemList/ItemList';
@@ -6,7 +5,7 @@ import { getProducts } from '../../Mock/Productos';
 
 
 
-const ItemListContainer = ({props}) => {
+const ItemListContainer = ({greeting}) => {
 
     const [listaProductos, setListaProductos] = useState([]);
     const {id} = useParams();
@@ -16,7 +15,7 @@ const ItemListContainer = ({props}) => {
         getProducts()
           .then((res) => {
             if (id) {
-              setListaProductos(res.filter((item) => item.category === id));
+              setListaProductos(res.filter((item) => item.categoria === id));
             } else {
               setListaProductos(res);
             }
@@ -28,8 +27,9 @@ const ItemListContainer = ({props}) => {
       return (
         <div>
           <h2>
-          {props.greeting}
-            
+          {greeting}{' '}
+          <span style={{ textTransform: 'capitalize', color: '#c737d7' }}/>
+
             {id && id}
            
           </h2>
