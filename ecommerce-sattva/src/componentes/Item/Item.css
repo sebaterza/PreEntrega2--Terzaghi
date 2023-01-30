@@ -1,9 +1,13 @@
 
-.producto-img{
-    width: 300px;
-    height: 300px;
+
+.btn-primary{
+    background-color: rgb(48, 194, 94);
+    border-color: rgb(213, 20, 220);
+    font-size: 0.8 rem;
 }
 
-.btn .btn-primary{
-    color: blueviolet;
+.btn-primary:hover{
+    background-color: rgb(170, 51, 197);
+    border-color:  rgb(48, 194, 94);
+
 }

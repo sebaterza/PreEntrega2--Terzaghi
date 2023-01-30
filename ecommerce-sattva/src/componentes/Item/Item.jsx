@@ -6,11 +6,10 @@ const Item = ({prod}) => {
   const navegar = useNavigate();
 
 return (
-  <div className="card" style={{ width: '20rem', margin: '.5rem' }}>
+  <div className="card" style={{ width: '17rem', margin: '.5rem' }}>
     <img src={img} className="card-img-top" alt={titulo} />
     <div className="card-body">
       <p className="card-text">{titulo}</p>
-      <p className="card-text">{descripcion}</p>
       <p className="card-text">${precio}</p>
       <p className="card-text">stock: {stock}</p>
 
