@@ -5,16 +5,30 @@ const CartProvider = ({children}) => {
     const [ cart, setCart] = useState([])
 
     const addItem = (item, quantity) => {
-        console.log(item.imageId)
-        const newProduct = {
-            name: item.title,
-            price: item.price,
-            quantity: quantity,
-            category: item.categoryId,
-            image: item.imageId,
+        
+        let newCart;
+        let product = cart.find(prod =>prod.id === item.id)
+        if(product){
+            product.quantity += quantity;
+            if(product.quantity > product.stock){
+                alert('No hay stock disponible')
+                return;
+            }
+            newCart = [...cart];
+
+        } else{
+            product ={
+                name: item.title,
+                price: item.price,
+                quantity: quantity,
+                category: item.categoryId,
+                image: item.imageId,
+                id: item.id,
+                stock: item.stock,
+            }
+             newCart = [...cart, product]
         }
-        setCart([...cart,  newProduct])
-        console.log(cart);
+        setCart(newCart)
     }
 
     const removeItem = (productId) => {
@@ -22,7 +36,9 @@ const CartProvider = ({children}) => {
 
     }
 
-    const isInCart = () => {}
+    const isInCart = (id) => {
+        return cart.some((item) => item.id === id)
+    }
 
     const clear = () => {
         setCart([])
