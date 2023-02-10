@@ -3,12 +3,16 @@ import { useParams } from 'react-router-dom';
 import ItemList from '../../componentes/ItemList/ItemList';
 import { getProducts } from '../../Mock/Productos';
 import { getProductsByCategory } from '../../Mock/Productos';
-
+import Loading from '../../componentes/Loading/Loading';
 
 const ItemListContainer = ({greeting}) => {
 
     const [listaProductos, setListaProductos] = useState([]);
+    const [loading, setLoading] = useState(true)
+    
     const {id} = useParams();
+
+    
 
 
     useEffect(() => {
@@ -16,8 +20,10 @@ const ItemListContainer = ({greeting}) => {
           .then((res) => {
             if (id) {
               setListaProductos(res.filter((item) => item.categoria === id));
+              
             } else {
               setListaProductos(res);
+              setLoading(false);
             }
           })
           .catch((error) => console.log(error));
@@ -33,7 +39,11 @@ const ItemListContainer = ({greeting}) => {
             {id && id}
            
           </h2>
-          {<ItemList listaProductos={listaProductos} />}
+          {loading === true 
+          ? <Loading /> 
+          : <ItemList listaProductos={listaProductos} />
+          }
+
         </div>
       );
     };

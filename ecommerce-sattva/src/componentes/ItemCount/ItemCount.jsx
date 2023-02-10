@@ -1,8 +1,8 @@
 import './ItemCount.css'
 import { useState } from 'react'
 
-
 const ItemCount = ({stock, initial, onAdd}) => {
+
     const[count, setCount] = useState(initial);
     const restar = () =>{
         if(count > 0){
@@ -28,9 +28,10 @@ const ItemCount = ({stock, initial, onAdd}) => {
           <button
             className="btn btn-dark"
             disabled={count === 0 || stock === 0}
-            onClick={() => onAdd(count)}
+            onClick={() => onAdd(count)} 
+           
           >
-            Comprar
+            Agregar el carrito
           </button>
         </>
       );

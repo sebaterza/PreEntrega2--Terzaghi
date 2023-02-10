@@ -10,6 +10,8 @@ import img9 from '../material-grafico/libros.jpg'
 import img10 from '../material-grafico/cartas.jpg'
 
 
+
+
 const arreglo =[
     {
         id:1,
@@ -136,3 +138,4 @@ export const getProducts = () => {
     })
   }
   
+

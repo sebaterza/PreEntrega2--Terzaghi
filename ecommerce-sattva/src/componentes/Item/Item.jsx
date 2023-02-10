@@ -2,7 +2,7 @@ import './Item.css'
 import { useNavigate } from 'react-router-dom';
 
 const Item = ({prod}) => {
-  const{ titulo, descripcion, precio, img, id, stock } = prod ;
+  const{ titulo, precio, img, id, stock } = prod ;
   const navegar = useNavigate();
 
 return (
@@ -12,6 +12,7 @@ return (
       <p className="card-text">{titulo}</p>
       <p className="card-text">${precio}</p>
       <p className="card-text">stock: {stock}</p>
+      
 
     </div>
 
