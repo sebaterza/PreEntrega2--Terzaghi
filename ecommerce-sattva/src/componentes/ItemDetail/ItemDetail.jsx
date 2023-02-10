@@ -8,7 +8,7 @@ const ItemDetail = ({detalleProducto}) => {
 
   const {addItem} = useContext(cartContext);
 
-  const { titulo, descripcion, precio, stock, img, id } = detalleProducto;
+  const { title, description, price, stock, imageId, id } = detalleProducto;
   const onAdd = (cantidad) => {
     console.log(`Compraste ${cantidad} items`);
     addItem(detalleProducto, cantidad);
@@ -22,9 +22,9 @@ const ItemDetail = ({detalleProducto}) => {
       alignItems: 'center',
       padding: '3rem',
     }}>
-        <h2>Detalle de: {titulo}</h2>
-        <img src={img} alt={titulo} width="250"/>
-        <p>{descripcion}</p>
+        <h2>Detalle de: {title}</h2>
+        <img src={`../images/${imageId}`} alt={title} width="250"/>
+        <p>{description}</p>
         <ItemCount initial ={1} stock={stock} onAdd={onAdd} />
         
         

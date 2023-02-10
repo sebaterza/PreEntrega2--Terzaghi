@@ -1,35 +1,34 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemList from '../../componentes/ItemList/ItemList';
-import { getProducts } from '../../Mock/Productos';
-import { getProductsByCategory } from '../../Mock/Productos';
 import Loading from '../../componentes/Loading/Loading';
+import { collection, getDocs, query, where } from 'firebase/firestore';
+import { db } from '../..';
 
 const ItemListContainer = ({greeting}) => {
 
     const [listaProductos, setListaProductos] = useState([]);
     const [loading, setLoading] = useState(true)
-    
+
     const {id} = useParams();
-
-    
-
-
-    useEffect(() => {
-        getProducts()
-          .then((res) => {
-            if (id) {
-              setListaProductos(res.filter((item) => item.categoria === id));
-              
-            } else {
-              setListaProductos(res);
-              setLoading(false);
+      useEffect(()=>{
+        setLoading(true)
+        const coleccionProductos= id ? query(collection(db, "products"), where("categoryId", "==", id)) : collection(db, "products");
+        getDocs(coleccionProductos)
+        .then((result)=> {
+          const lista = result.docs.map((producto)=>{
+            return{
+              id:producto.id,
+              ...producto.data()
             }
           })
-          .catch((error) => console.log(error));
-      }, [id]);
+          setListaProductos(lista)
+        })
+        .catch((error)=> console.log(error))
+        .finally(()=> setLoading(false))
+      }, [id])
 
-
+      console.log(listaProductos)
       return (
         <div>
           <h2>

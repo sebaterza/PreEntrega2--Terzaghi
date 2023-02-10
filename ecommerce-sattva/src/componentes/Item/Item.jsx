@@ -2,15 +2,15 @@ import './Item.css'
 import { useNavigate } from 'react-router-dom';
 
 const Item = ({prod}) => {
-  const{ titulo, precio, img, id, stock } = prod ;
+  const{ title, price, imageId, id, stock } = prod ;
   const navegar = useNavigate();
 
 return (
   <div className="card" style={{ width: '17rem', margin: '.5rem' }}>
-    <img src={img} className="card-img-top" alt={titulo} />
+    <img src={`../images/${imageId}`} className="card-img-top" alt={title} />
     <div className="card-body">
-      <p className="card-text">{titulo}</p>
-      <p className="card-text">${precio}</p>
+      <p className="card-text">{title}</p>
+      <p className="card-text">${price}</p>
       <p className="card-text">stock: {stock}</p>
       
 
@@ -26,4 +26,4 @@ return (
 );
 };
 
-export default Item;
+export default Item;
