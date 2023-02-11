@@ -15,11 +15,12 @@ export const CartWidget = () => {
     }, [cart])
 
     return (
-        <a>🛒
+        
             <span>
+            🛒
                 {total}
             
             </span>
-        </a>
+        
      );
 }
